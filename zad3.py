@@ -66,6 +66,10 @@ for i in range(0, number_of_rounds):
         while second_player_move not in ['papier', 'nożyce', 'kamień']:
             second_player_move = getpass.getpass(f"{second_player_name}, niepoprawny ruch!\n")
 
+        print(f"Ruchy:\n"
+              f"{first_player_name}: {first_player_move}\n"
+              f"{second_player_name}: {second_player_move}")
+
     rez = rezults.get((first_player_move, second_player_move))
     if rez == 0:
         who_won.append(f"{first_player_move} - {second_player_move}: remis")
@@ -76,6 +80,7 @@ for i in range(0, number_of_rounds):
         who_won.append(f"{first_player_move} - {second_player_move}: {second_player_name}")
         second_player_wins += 1
 
+print("Wyniki rund:")
 for i in range(0, len(who_won)):
     print(f"{i}: {who_won[i]}")
 
